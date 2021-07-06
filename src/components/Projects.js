@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -62,7 +59,7 @@ export const Projects = () => {
   }, [])
 
   const showProjects = () => {
-    if (status == 'DONE') {
+    if (status === 'DONE') {
       return pinned.map((proj, idx) => {
         return (
           <Grid key={idx} container sm={12} md={6} lg={6}>

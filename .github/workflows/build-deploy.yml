@@ -22,14 +22,13 @@ jobs:
       with:
         node-version: 12.x
     
-    - name: Install NPM packages
-      run: npm ci
-    
-    - name: Build project
-      run: npm run build
-    
-    - name: Run tests
-      run: npm run test
+    - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+    - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
@@ -41,7 +40,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     
     steps:
     - name: Download artifact

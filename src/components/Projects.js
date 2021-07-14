@@ -42,7 +42,7 @@ export const Projects = () => {
         query: query
       },
       headers: {
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+        'Authorization': `Bearer ${process.env.API_SECRET}`,
         'Content-Type': 'application/json',
         'Accept': '*/*',
       },

@@ -5,7 +5,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import images from '../utils/ImageHelper'
+import images from '../utils/ImageHelper';
+import Email from '@material-ui/icons/Email';
 
 const useStyles = makeStyles({
   root: {
@@ -36,6 +37,13 @@ const useStyles = makeStyles({
   },
   center: {
     alignItems: 'center'
+  },
+  links: {
+    'text-decoration': 'none',
+    color: 'inherit'
+  },
+  email: {
+    fontSize: 'xx-large'
   }
 });
 
@@ -286,7 +294,7 @@ export const Main = () => {
         <div className="section-text">
           <ul className="contact-list">
             <li>
-              <a href="mailto:jmkroll21@gmail.com"><i className="material-icons">email</i></a>
+              <a className={classes.links} href="mailto:jmkroll21@gmail.com"><Email className={classes.email} /></a>
             </li>
             <li>
               <a href="https://github.com/Johnnyk737"><img src={images.githubIcon} height="30" width="30" alt="GitHub" /></a>
